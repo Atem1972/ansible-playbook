@@ -1,0 +1,9 @@
+---
+- hosts: all
+  vars_files:
+   - vars.yml
+  tasks:
+    - name: Copy config file
+      template: 
+        src: /home/ec2-user/ansible-dev/apache.j2  # Ensure this is a valid template file
+        dest: /tmp/apache.conf
